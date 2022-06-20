@@ -123,7 +123,8 @@ function AnimeDetail() {
                 <InputWrapper>
                     <label>name collection</label>
                     <Select placeholder='select collection...' onChange={e => setSelect(e.target.value)}>
-                        {selectCollection.map(data => {
+                        <option selected='selected'>--- select collection ---</option>
+                        {selectCollection.map((data, index) => {
                             return <option value={data}>{data}</option>
                         })}
                     </Select>
@@ -164,7 +165,7 @@ const Button = styled.button`
 
 const Select = styled.select`
     border-radius: 8px;
-    padding: 4px;
+    padding: 6px 0;
 `
 
 const Header = styled.div`
@@ -257,9 +258,8 @@ const ButtonWrapper = styled.div`
 const InputWrapper = styled.div`
     display: flex;
     flex-direction: column;
-
     label{
-        margin-bottom: 5px;
+        margin: 10px 0;
     }
 `
 
