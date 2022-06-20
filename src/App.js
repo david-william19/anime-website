@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import AnimeCollection from "./pages/AnimeCollection";
+import AnimeList from "./pages/AnimeList";
+import './index.css'
+import AnimeCollectionDetail from "./pages/AnimeCollectionDetail";
+import AnimeDetail from "./pages/AnimeDetail";
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/" index element={<AnimeList />} />
+        <Route path="/anime-collection" element={<AnimeCollection />} />
+        <Route path="/anime-collection/:name" element={<AnimeCollectionDetail />} />
+        <Route path="/anime-detail/:id" element={<AnimeDetail />} />
+      </Routes>
   );
 }
 
